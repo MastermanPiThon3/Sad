@@ -18,9 +18,23 @@ screen=pygame.display.set_mode((width, height))
 #Holds current position of the staircase thing. Set the start position of the case.
 X = 0
 Y = 1
-playerPos = [400, 480]
+playerPos = [320, 480]
 
 #Number of pixles to move the cactus-catcher each loop
-PlayerSpeed = 6
+PlayerSpeed = 10
 
-#The image for the cactus-catcher, it is loaded from the file '....png'
+#The image for the cactus-catcher, it is loaded from the file 'dude.png'
+Player = pygame.image.load("BreakALegFinny/dude.png")
+playerWidth = Player.get_width()
+playerHeight = Player.get_height()
+
+xMinMargin = 10
+xMaxMargin = width - playerWidth
+yMinMargin = 10
+yMaxMargin = height - playerHeight
+
+#Holds current direction the player is moving. Set no movement
+#       right-a left-d
+keys = {K_a:0, K_d:0}
+
+
