@@ -1,9 +1,12 @@
 #WARNING- this game was created by two people who recently read A Separate Peace and can be a tad bit crazy. Proceed at your own risk
 #Pippin beat Sauron
+#Eowyn > Frodo
 #Import pygame module
 import math
 import pygame
 from pygame.locals import *
+
+from FINNY import *
 
 #Initialize the pygame
 pygame.init()
@@ -33,18 +36,8 @@ xMaxMargin = width - playerWidth
 yMinMargin = 10
 yMaxMargin = height - playerHeight
 
-#Finny image loaded from le fichier-CHANGE TO PICTURE
-Finny = pygame.image.load("badguy0.png")
-finnyWidth = Finny.get_width()
-finnyHeight = Finny.get_height()
-
-xMinMargin = 10
-xMaxMargin = width - finnyWidth
-yMinMargin = 10
-yMaxMargin = height - finnyHeight
-
 #To spawn FInny randomly
-#from game 4 badguys class- spawndelay, timetospawn, active,speed, def spawn change to random width
+MrFell = FinniesFell(46)
 
 #Holds current direction the player is moving. Set no movement
 #       right-a left-d
