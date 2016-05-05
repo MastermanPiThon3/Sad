@@ -39,7 +39,7 @@ yMinMargin = 10
 yMaxMargin = height - playerHeight
 
 #To spawn FInny randomly
-MrFell = FinniesFell(9)
+MrFell = FinniesFell(1000)
 
 #Holds current direction the player is moving. Set no movement
 #       right-a left-d

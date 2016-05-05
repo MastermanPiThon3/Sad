@@ -17,7 +17,7 @@ class FinniesFell:
     def __init__(self, spawnDelay):
         self.Finny = pygame.image.load("badguy0.png")
         self.SpawnDelay = spawnDelay
-        self.TimeToSpawn = 10
+        self.TimeToSpawn = pygame.time.get_ticks()
         self.Active = []
         self.Speed = 5
         self.Width = self.Finny.get_width()
@@ -25,9 +25,10 @@ class FinniesFell:
         self.Center = [self.Width/2, self.Height/2]
 
     def Move(self, height, width):
-        if (0 >= self.TimeToSpawn):
+        CurrentTime = pygame.time.get_ticks()
+        if CurrentTime - self.TimeToSpawn >= self.SpawnDelay:
             self.Spawn(width)
-            self.TimeToSpawn = self.SpawnDelay
+            self.TimeToSpawn = CurrentTime - random.randint(0, 333)
 
         #print "Move", len(self.Active)
         for b in self.Active:
