@@ -43,6 +43,8 @@ class FinniesFell:
         #print "Spawn ", spawnPosition
         self.Active.append(FinnyFell(spawnPosition))
 
+    def Intersect(self, FinnyFell, playerPos, playerWidth, playerHeight)
+           
     def Draw(self, screen):
         for FF in self.Active:
             screen.blit(self.Finny, FF.Position)
