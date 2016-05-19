@@ -24,7 +24,7 @@ class FinniesFell:
         self.Height = self.Finny.get_height()
         self.Center = [self.Width/2, self.Height/2]
 
-    def Move(self, height, width):
+    def Move(self, height, width, playerPos, playerWidth, playerHeight):
         CurrentTime = pygame.time.get_ticks()
         if CurrentTime - self.TimeToSpawn >= self.SpawnDelay:
             self.Spawn(width)
@@ -37,14 +37,20 @@ class FinniesFell:
         self.Active = filter(lambda bg: bg.Position[Y] < height, self.Active)
 
         self.TimeToSpawn -= 1
+        #HELP
+        self.Active = filter(lambda ff: not self.Intersect(ff, playerPos, playerWidth, playerHeight), self.Active)
 
     def Spawn(self, width):
         spawnPosition = [random.randint(20, width - 20), 0]
         #print "Spawn ", spawnPosition
         self.Active.append(FinnyFell(spawnPosition))
 
-    def Intersect(self, FinnyFell, playerPos, playerWidth, playerHeight)
-           
+    def Intersect(self, finnyfell, playerPos, playerWidth, playerHeight):
+        Finnyrect = Rect(finnyfell.Position, [self.Width, self.Height])
+        Playerrect = Rect(playerPos, [playerWidth, playerHeight])
+        return Finnyrect.colliderect(Playerrect)
+
+          
     def Draw(self, screen):
         for FF in self.Active:
             screen.blit(self.Finny, FF.Position)

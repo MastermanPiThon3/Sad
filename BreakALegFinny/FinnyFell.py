@@ -49,7 +49,7 @@ keys = {K_a:0, K_d:0}
 while gameOn:
     #Fill screen with color-CHANGE TO BACKGROUND PICTURE
     screen.fill((0,0,200))
-    MrFell.Move(height,width)
+    MrFell.Move(height,width,playerPos,playerWidth,playerHeight)
 
     #Place image on screen
     screen.blit(Player,playerPos)
