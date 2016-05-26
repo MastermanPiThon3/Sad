@@ -26,13 +26,14 @@ X = 0
 playerPos = [320, 400]
 
 #Number of pixles to move the cactus-catcher each loop
-PlayerSpeed = 10
+PlayerSpeed = 20
 
 #The image for the cactus-catcher, it is loaded from the file 'dude.png'-CHANGE TO PICTURE
-Player = pygame.image.load("dude.png")
+Player = pygame.image.load("cactuscatcher.jpeg")
+Player.set_colorkey([255,255,255])
+Player = pygame.transform.scale(Player, [72,92])
 playerWidth = Player.get_width()
 playerHeight = Player.get_height()
-
 xMinMargin = 10
 xMaxMargin = width - playerWidth
 yMinMargin = 10

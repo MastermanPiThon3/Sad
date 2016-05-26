@@ -15,7 +15,9 @@ class FinnyFell:
 
 class FinniesFell:
     def __init__(self, spawnDelay):
-        self.Finny = pygame.image.load("badguy0.png")
+        self.Finny = pygame.image.load("finnyS.png")
+        self.Finny.set_colorkey([255,255,255])
+        self.Finny = pygame.transform.scale(self.Finny, [64,39])
         self.SpawnDelay = spawnDelay
         self.TimeToSpawn = pygame.time.get_ticks()
         self.Active = []
